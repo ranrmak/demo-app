@@ -45,11 +45,10 @@ class PipelineStack(Stack):
 
         github_repo = 'ranrmak/demo-app'
 
-        git_hub_commit = _pipelines.CodePipelineSource.git_hub(
+        git_hub_commit = _pipelines.CodePipelineSource.connection(
             github_repo,
             "main",
-            authentication=SecretValue.secrets_manager(
-                "lambda_container_cdk_pipeline_github", json_field='github')
+            connection_arn="arn:aws:codestar-connections:us-east-2:962670869170:connection/a00cc05c-9a89-43aa-8925-cb201a30d869"
         )
 
         pipeline = _pipelines.CodePipeline(self, "Container_Pipeline",
