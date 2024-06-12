@@ -43,7 +43,7 @@ class PipelineStack(Stack):
                                    value=ecr_repo.repository_uri,
                                    export_name="ecr-repo-uri")
 
-        github_repo = 'ziweizhou-sam/rca-demo'
+        github_repo = 'ranrmak/demo-app'
 
         git_hub_commit = _pipelines.CodePipelineSource.git_hub(
             github_repo,
@@ -64,13 +64,6 @@ class PipelineStack(Stack):
 
         build_spec = _codebuild.BuildSpec.from_object(buildContainerBuildSpec)
 
-        log_bucket = aws_s3.Bucket(self, "rca_demo", bucket_name="rca-demo-02")
-        log_bucket.add_to_resource_policy(aws_iam.PolicyStatement(
-            actions=['s3:*'],
-            resources=[log_bucket.arn_for_objects('*')],
-            principals=[aws_iam.AccountPrincipal('844041478127')]
-        ))
-
         build_container_project = _pipelines.CodeBuildStep("ContainerBuild",
             build_environment=_codebuild.BuildEnvironment(
                 build_image=_codebuild.LinuxBuildImage.STANDARD_7_0,
@@ -83,15 +76,7 @@ class PipelineStack(Stack):
                 "IMAGE_TAG": image_tag,
                 "AWS_ACCOUNT_ID": self.account,
                 "IMAGE_REPO_NAME": ecr_repo.repository_uri
-            },
-            logging=_codebuild.LoggingOptions(
-                s3=_codebuild.S3LoggingOptions(
-                    bucket=log_bucket,
-                    prefix="build-log"),
-                cloud_watch=_codebuild.CloudWatchLoggingOptions(
-                    log_group=aws_logs.LogGroup(self,"rca_demo_log_group"),
-                    prefix="build-log")
-            )
+            }
         )
 
         lambda_function1 = ApplicationStageLambda1(self, 'Container-CDK-Pipeline-Lambda-Stage1')
