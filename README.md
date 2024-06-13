@@ -173,3 +173,6 @@ Contributions are more than welcome. Please read the [code of conduct](CODE_OF_C
 ### License Summary
 
 This library is licensed under the MIT-0 License. See the LICENSE file.
+
+### Feature branch development
+Create branch with prefix 'feature-' followed by feature or developer name
