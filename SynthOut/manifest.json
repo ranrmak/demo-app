@@ -1,0 +1,204 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "assembly-cdk-pipelines-demo-Container-CDK-Pipeline-Lambda-Stage1": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-cdk-pipelines-demo-Container-CDK-Pipeline-Lambda-Stage1",
+        "displayName": "cdk-pipelines-demo/Container-CDK-Pipeline-Lambda-Stage1"
+      }
+    },
+    "cdk-pipelines-demo.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "cdk-pipelines-demo.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "cdk-pipelines-demo": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "cdk-pipelines-demo.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e191c6c886008bac67d8b8f340828faa140f66176f3fb42809d497447ffeebc4.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "cdk-pipelines-demo.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "cdk-pipelines-demo.assets"
+      ],
+      "metadata": {
+        "/cdk-pipelines-demo/lambda_container_pipeline/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdacontainerpipelineEB464C13"
+          }
+        ],
+        "/cdk-pipelines-demo/ecr_repo_name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ecrreponame"
+          }
+        ],
+        "/cdk-pipelines-demo/ecr_repo_uri": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ecrrepouri"
+          }
+        ],
+        "/cdk-pipelines-demo/Container_Pipeline/Pipeline/ArtifactsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerPipelineArtifactsBucket10240DFE"
+          }
+        ],
+        "/cdk-pipelines-demo/Container_Pipeline/Pipeline/ArtifactsBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerPipelineArtifactsBucketPolicy8D7AFC66"
+          }
+        ],
+        "/cdk-pipelines-demo/Container_Pipeline/Pipeline/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerPipelineRoleD472C53B"
+          }
+        ],
+        "/cdk-pipelines-demo/Container_Pipeline/Pipeline/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerPipelineRoleDefaultPolicyD66EB19C"
+          }
+        ],
+        "/cdk-pipelines-demo/Container_Pipeline/Pipeline/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerPipeline3FD96453"
+          }
+        ],
+        "/cdk-pipelines-demo/Container_Pipeline/Pipeline/Source/ranrmak_demo-app/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerPipelineSourceranrmakdemoappCodePipelineActionRoleD113DC55"
+          }
+        ],
+        "/cdk-pipelines-demo/Container_Pipeline/Pipeline/Source/ranrmak_demo-app/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerPipelineSourceranrmakdemoappCodePipelineActionRoleDefaultPolicyF7AB6889"
+          }
+        ],
+        "/cdk-pipelines-demo/Container_Pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerPipelineBuildSynthCdkBuildProjectRole9BCF6C91"
+          }
+        ],
+        "/cdk-pipelines-demo/Container_Pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerPipelineBuildSynthCdkBuildProjectRoleDefaultPolicy5F7648BD"
+          }
+        ],
+        "/cdk-pipelines-demo/Container_Pipeline/Pipeline/Build/Synth/CdkBuildProject/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerPipelineBuildSynthCdkBuildProject8247BDF7"
+          }
+        ],
+        "/cdk-pipelines-demo/Container_Pipeline/Pipeline/Container-CDK-Pipeline-Lambda-Stage1/ContainerBuild/ContainerBuild/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerPipelineContainerCDKPipelineLambdaStage1ContainerBuildRoleF5D6A105"
+          }
+        ],
+        "/cdk-pipelines-demo/Container_Pipeline/Pipeline/Container-CDK-Pipeline-Lambda-Stage1/ContainerBuild/ContainerBuild/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerPipelineContainerCDKPipelineLambdaStage1ContainerBuildRoleDefaultPolicy4ED8E416"
+          }
+        ],
+        "/cdk-pipelines-demo/Container_Pipeline/Pipeline/Container-CDK-Pipeline-Lambda-Stage1/ContainerBuild/ContainerBuild/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerPipelineContainerCDKPipelineLambdaStage1ContainerBuild46A9ED06"
+          }
+        ],
+        "/cdk-pipelines-demo/Container_Pipeline/CodeBuildActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerPipelineCodeBuildActionRole82A3299E"
+          }
+        ],
+        "/cdk-pipelines-demo/Container_Pipeline/CodeBuildActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerPipelineCodeBuildActionRoleDefaultPolicy219881F1"
+          }
+        ],
+        "/cdk-pipelines-demo/Container_Pipeline/UpdatePipeline/SelfMutation/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerPipelineUpdatePipelineSelfMutationRole2A39240B"
+          }
+        ],
+        "/cdk-pipelines-demo/Container_Pipeline/UpdatePipeline/SelfMutation/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerPipelineUpdatePipelineSelfMutationRoleDefaultPolicy1BA41250"
+          }
+        ],
+        "/cdk-pipelines-demo/Container_Pipeline/UpdatePipeline/SelfMutation/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContainerPipelineUpdatePipelineSelfMutationE5D853B4"
+          }
+        ],
+        "/cdk-pipelines-demo/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/cdk-pipelines-demo/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/cdk-pipelines-demo/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/cdk-pipelines-demo/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "cdk-pipelines-demo"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

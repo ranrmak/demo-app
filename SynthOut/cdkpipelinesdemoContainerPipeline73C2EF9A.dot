@@ -1,0 +1,40 @@
+digraph G {
+  # Arrows represent an "unlocks" relationship (opposite of dependency). So chosen
+  # because the layout looks more natural that way.
+  # To represent subgraph dependencies, subgraphs are represented by BEGIN/END nodes.
+  # To render: `dot -Tsvg cdkpipelinesdemoContainerPipeline73C2EF9A.dot > graph.svg`, open in a browser.
+  node [shape="box"];
+"BEGIN Build" [shape="cds", style="filled", fillcolor="#b7deff"];
+"END Build" [shape="cds", style="filled", fillcolor="#b7deff"];
+"Build.Synth";
+"Source.ranrmak/demo-app" -> "Build.Synth";
+"BEGIN Build" -> "Build.Synth";
+"Build.Synth" -> "END Build";
+"BEGIN UpdatePipeline" [shape="cds", style="filled", fillcolor="#b7deff"];
+"END UpdatePipeline" [shape="cds", style="filled", fillcolor="#b7deff"];
+"UpdatePipeline.SelfMutate";
+"Build.Synth" -> "UpdatePipeline.SelfMutate";
+"BEGIN UpdatePipeline" -> "UpdatePipeline.SelfMutate";
+"UpdatePipeline.SelfMutate" -> "END UpdatePipeline";
+"BEGIN Container-CDK-Pipeline-Lambda-Stage1" [shape="cds", style="filled", fillcolor="#b7deff"];
+"END Container-CDK-Pipeline-Lambda-Stage1" [shape="cds", style="filled", fillcolor="#b7deff"];
+"UpdatePipeline.SelfMutate" -> "BEGIN Container-CDK-Pipeline-Lambda-Stage1";
+"BEGIN Container-CDK-Pipeline-Lambda-Stage1.Demo-Lambda1" [shape="cds", style="filled", fillcolor="#b7deff"];
+"END Container-CDK-Pipeline-Lambda-Stage1.Demo-Lambda1" [shape="cds", style="filled", fillcolor="#b7deff"];
+"Container-CDK-Pipeline-Lambda-Stage1.ContainerBuild" -> "BEGIN Container-CDK-Pipeline-Lambda-Stage1.Demo-Lambda1";
+"Container-CDK-Pipeline-Lambda-Stage1.Demo-Lambda1.Deploy";
+"Container-CDK-Pipeline-Lambda-Stage1.Demo-Lambda1.Prepare" -> "Container-CDK-Pipeline-Lambda-Stage1.Demo-Lambda1.Deploy";
+"Container-CDK-Pipeline-Lambda-Stage1.Demo-Lambda1.Prepare";
+"Build.Synth" -> "Container-CDK-Pipeline-Lambda-Stage1.Demo-Lambda1.Prepare";
+"BEGIN Container-CDK-Pipeline-Lambda-Stage1.Demo-Lambda1" -> "Container-CDK-Pipeline-Lambda-Stage1.Demo-Lambda1.Prepare";
+"Container-CDK-Pipeline-Lambda-Stage1.Demo-Lambda1.Deploy" -> "END Container-CDK-Pipeline-Lambda-Stage1.Demo-Lambda1";
+"Container-CDK-Pipeline-Lambda-Stage1.ContainerBuild";
+"Source.ranrmak/demo-app" -> "Container-CDK-Pipeline-Lambda-Stage1.ContainerBuild";
+"BEGIN Container-CDK-Pipeline-Lambda-Stage1" -> "Container-CDK-Pipeline-Lambda-Stage1.ContainerBuild";
+"END Container-CDK-Pipeline-Lambda-Stage1.Demo-Lambda1" -> "END Container-CDK-Pipeline-Lambda-Stage1";
+"BEGIN Source" [shape="cds", style="filled", fillcolor="#b7deff"];
+"END Source" [shape="cds", style="filled", fillcolor="#b7deff"];
+"Source.ranrmak/demo-app";
+"BEGIN Source" -> "Source.ranrmak/demo-app";
+"Source.ranrmak/demo-app" -> "END Source";
+}

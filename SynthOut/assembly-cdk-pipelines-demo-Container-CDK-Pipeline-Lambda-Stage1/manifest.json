@@ -1,0 +1,78 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "cdkpipelinesdemoContainerCDKPipelineLambdaStage1DemoLambda10C299505.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "cdkpipelinesdemoContainerCDKPipelineLambdaStage1DemoLambda10C299505.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "cdkpipelinesdemoContainerCDKPipelineLambdaStage1DemoLambda10C299505": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "cdkpipelinesdemoContainerCDKPipelineLambdaStage1DemoLambda10C299505.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/5ea2d26e31383de295cf046ba0de2c8d812e123424263834398ea5a31fb2ac65.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "cdkpipelinesdemoContainerCDKPipelineLambdaStage1DemoLambda10C299505.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "Container-CDK-Pipeline-Lambda-Stage1-Demo-Lambda1"
+      },
+      "dependencies": [
+        "cdkpipelinesdemoContainerCDKPipelineLambdaStage1DemoLambda10C299505.assets"
+      ],
+      "metadata": {
+        "/cdk-pipelines-demo/Container-CDK-Pipeline-Lambda-Stage1/Demo-Lambda1/LambdaContainerFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaContainerFunctionServiceRole78BB0746"
+          }
+        ],
+        "/cdk-pipelines-demo/Container-CDK-Pipeline-Lambda-Stage1/Demo-Lambda1/LambdaContainerFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaContainerFunctionB0928A51"
+          }
+        ],
+        "/cdk-pipelines-demo/Container-CDK-Pipeline-Lambda-Stage1/Demo-Lambda1/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/cdk-pipelines-demo/Container-CDK-Pipeline-Lambda-Stage1/Demo-Lambda1/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/cdk-pipelines-demo/Container-CDK-Pipeline-Lambda-Stage1/Demo-Lambda1/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/cdk-pipelines-demo/Container-CDK-Pipeline-Lambda-Stage1/Demo-Lambda1/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "cdk-pipelines-demo/Container-CDK-Pipeline-Lambda-Stage1/Demo-Lambda1"
+    }
+  }
+}
