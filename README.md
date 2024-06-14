@@ -29,7 +29,8 @@ In this demo you will deploy a pipeline in CodePipeline which is triggered when 
 
 ### Usage
 
-> **Note**  
+> **Note**
+> New note 
 > You are responsible for the cost of the AWS services used while running this sample deployment. There is no additional cost for using this sample. For full details, see the following pricing pages for each AWS service you will be using in this sample. Prices are subject to change.
 >
 > - [AWS CodeBuild](https://aws.amazon.com/codebuild/pricing/)
