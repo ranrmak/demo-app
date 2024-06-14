@@ -1,4 +1,4 @@
-## CDK Pipelines Demo
+# CDK Pipelines Demo
 
 Cloud Development Kit (CDK) Pipelines is a library that makes it easy to deploy CI/CD Pipelines using [AWS CodePipeline](https://aws.amazon.com/codepipeline/).
 
