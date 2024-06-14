@@ -21,7 +21,7 @@ In this demo you will deploy a pipeline in CodePipeline which is triggered when 
 - [Contributing](#contributing)
 - [License Summary](#License-Summary)
 
-### Architecture
+## Architecture
 
 <p align="center">
   <img src="imgs/arch-pipeline.PNG" alt="Architecture Diagram" />
@@ -38,7 +38,7 @@ In this demo you will deploy a pipeline in CodePipeline which is triggered when 
 > - [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/pricing/)
 > - [Amazon Elastic Container Registry](https://aws.amazon.com/ecr/pricing/)
 
-#### Prerequisites
+### Prerequisites
 
 To deploy the demo, you will require:
 
@@ -48,7 +48,7 @@ To deploy the demo, you will require:
 - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) with [credentials configured](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) which will also be used by the CDK. [Administrator Access](https://docs.aws.amazon.com/cdk/api/latest/python/aws_cdk.pipelines/README.html#provisioning-the-pipeline) is recommend but this is only for the initial deployment of the pipeline.
 - Python 3.6 or newer.
 
-#### Prepare your GitHub repository
+### Prepare your GitHub repository
 
 1. [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repository to your own GitHub account
 2. Create a [Personal Access Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) for your repository with the scopes:
@@ -74,7 +74,7 @@ To deploy the demo, you will require:
    git push
    ```
 
-#### Deploy to AWS
+### Deploy to AWS
 
 1. Create a Python virtual environment and install the required libraries
 
