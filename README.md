@@ -21,7 +21,7 @@ In this demo you will deploy a pipeline in CodePipeline which is triggered when 
 - [Contributing](#contributing)
 - [License Summary](#License-Summary)
 
-### Architecture
+## Architecture
 
 <p align="center">
   <img src="imgs/arch-pipeline.PNG" alt="Architecture Diagram" />
