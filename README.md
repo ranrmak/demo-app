@@ -74,7 +74,7 @@ To deploy the demo, you will require:
    git push
    ```
 
-#### Deploy to AWS
+### Deploy to AWS
 
 1. Create a Python virtual environment and install the required libraries
 
