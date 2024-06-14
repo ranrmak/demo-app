@@ -38,7 +38,7 @@ In this demo you will deploy a pipeline in CodePipeline which is triggered when 
 > - [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/pricing/)
 > - [Amazon Elastic Container Registry](https://aws.amazon.com/ecr/pricing/)
 
-#### Prerequisites
+### Prerequisites
 
 To deploy the demo, you will require:
 
