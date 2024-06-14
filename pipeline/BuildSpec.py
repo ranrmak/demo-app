@@ -19,7 +19,7 @@ buildspec = {
                     'echo $IMAGE_REPO_NAME',
                     'echo $IMAGE_TAG',
                     'docker build --no-cache -t $IMAGE_REPO_NAME:$IMAGE_TAG .',
-                    'docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $IMAGE_REPO_NAME:$IMAGE_TAG',
+                    'docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $IMAGE_REPO_NAME:latest-986866a69cc4',
             ],
         },
 
